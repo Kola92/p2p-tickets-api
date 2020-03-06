@@ -21,7 +21,7 @@ export const jwt = async (req, res, next) => {
     });
   }
   try {
-    const decode = authUtil.verifyJwtToken(authorization, process.env.JWT_KEY as string) as any;
+    const decode = authUtil.verifyJwtToken(authorization, process.env.JWT_KEY);
     req.id = decode.id;
     next();
   } catch (error) {
